@@ -14,7 +14,7 @@ def home():
 @app.route('/guess/<name>')
 def guess(name):
     year = datetime.datetime.now().year
-    return render_template("guess.html", footer=year, name=name)
+    return render_template("guess.html", footer=year, name=escape(name))
 
 if __name__ == "__main__":
     app.run(debug=True)
